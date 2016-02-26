@@ -1,1 +1,11 @@
+table * {
+  font-size: larger;
+}
 
+td{
+  padding: 4px;
+  text-align: center;
+  border: 1px solid black;
+  width: 60px;
+  height: 48px;
+}
