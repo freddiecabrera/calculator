@@ -4,6 +4,7 @@
 
 'use strict';
 var $display;
+var decimalClicked = false;
 $(document).ready(init);
 
 function init(){
@@ -15,6 +16,7 @@ function init(){
   $('#clear').click(clearClicked);
   $('#plusEqual').click(invertSign);
   $('#percent').click(percent);
+  $('#decimal').click(addDecimal);
 }
 
 
@@ -25,6 +27,7 @@ function clickNum() {
 
 function clearClicked(){
   $('#display').text(0);
+  decimalClicked = false;
 }
 
 function addNumToDisplay(num) {
@@ -60,4 +63,12 @@ function percent() {
   var currentDisplay = $display.text();
   var divided = currentDisplay / 100;
   $display.text(divided);
+}
+
+function addDecimal() {
+  var currentDisplay = $display.text();
+  if(decimalClicked === false){
+    addNumToDisplay('.');
+    decimalClicked = true;
+  }
 }
