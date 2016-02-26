@@ -42,5 +42,9 @@ function keyPressed(event) {
     addNumToDisplay(key);
   }
 
+  if(key === 'c'){
+    clearClicked();
+  }
+
   // console.log(key);
 }
