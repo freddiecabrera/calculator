@@ -13,6 +13,8 @@ function init(){
 
   $('.num').click(clickNum);
   $('#clear').click(clearClicked);
+  $('#plusEqual').click(invertSign);
+  $('#percent').click(percent);
 }
 
 
@@ -45,6 +47,17 @@ function keyPressed(event) {
   if(key === 'c'){
     clearClicked();
   }
+}
 
-  // console.log(key);
+function invertSign(){
+  var currentDisplay = $display.text();
+
+  var inverted = currentDisplay * -1;
+  $display.text(inverted)
+}
+
+function percent() {
+  var currentDisplay = $display.text();
+  var divided = currentDisplay / 100;
+  $display.text(divided);
 }
