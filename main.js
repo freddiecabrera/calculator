@@ -1,3 +1,6 @@
+//$. to check jquery methods
+
+
 
 'use strict';
 var $display;
@@ -35,5 +38,9 @@ function addNumToDisplay(num) {
 function keyPressed(event) {
   event.preventDefault();
   var key = String.fromCharCode(event.charCode);
-  console.log(key);
+  if($.isNumeric(key)){
+    addNumToDisplay(key);
+  }
+
+  // console.log(key);
 }
