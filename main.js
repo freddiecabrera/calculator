@@ -4,7 +4,6 @@
 
 'use strict';
 var $display;
-var decimalClicked = false;
 $(document).ready(init);
 
 function init(){
@@ -27,7 +26,6 @@ function clickNum() {
 
 function clearClicked(){
   $('#display').text(0);
-  decimalClicked = false;
 }
 
 function addNumToDisplay(num) {
@@ -67,8 +65,8 @@ function percent() {
 
 function addDecimal() {
   var currentDisplay = $display.text();
-  if(decimalClicked === false){
-    addNumToDisplay('.');
-    decimalClicked = true;
+
+  if(!currentDisplay.includes('.')){
+    $display.text(currentDisplay + '.');
   }
 }
