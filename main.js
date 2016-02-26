@@ -4,6 +4,7 @@
 
 'use strict';
 var $display;
+var currentOperator;
 $(document).ready(init);
 
 function init(){
@@ -16,6 +17,10 @@ function init(){
   $('#plusEqual').click(invertSign);
   $('#percent').click(percent);
   $('#decimal').click(addDecimal);
+  $('#add').click(doTheMath);
+  $('#subtract').click(doTheMath);
+  $('#multiply').click(doTheMath);
+  $('#divide').click(doTheMath);
 }
 
 
@@ -69,4 +74,9 @@ function addDecimal() {
   if(!currentDisplay.includes('.')){
     $display.text(currentDisplay + '.');
   }
+}
+
+function doTheMath(){
+  currentOperator = $(this).text();
+  console.log(currentOperator);
 }
